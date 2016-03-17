@@ -43,7 +43,7 @@ download_dir="$bin/../build"
 
 rm -rf $download_dir
 mkdir -p $download_dir
-curl -L https://github.com/wp_launch_check/wp_launch_check/releases/download/v${version}/wp_launch_check_${version}.phar --output $download_dir/wp-launch-check.phar
+curl -L https://github.com/pantheon-systems/wp_launch_check/releases/download/v{version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
 
 
 fpm -s dir -t rpm  \
