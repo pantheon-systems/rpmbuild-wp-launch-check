@@ -28,7 +28,7 @@ then
 fi
 
 GITSHA=$(git log -1 --format="%h")
-shortname="wp-launch-check-0"
+shortname="wp-launch-check-0.x"
 name="$shortname-$channel"
 
 version=$(cat $bin/../VERSION.txt)

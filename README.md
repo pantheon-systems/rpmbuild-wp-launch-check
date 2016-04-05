@@ -5,13 +5,13 @@ This repository builds an RPM for wp-cli.
 ## Relevant wp-cli RPM names
 
 - wp-cli: Legacy RPM containing wp-cli and wp_launch_check
-- wp-cli-0: RPM containing only wp-cli (version 0.x)
-- wp-launch-check: RPM containing only wp_launch_check
+- wp-cli-0.x: RPM containing only wp-cli (version 0.x)
+- wp-launch-check-0.x: RPM containing only wp_launch_check 0.x
 
 The RPM filename built by this repository is:
 ```
-wp-launch-check-0-release-0.6.0-01458238016.git4602714.x86_64.rpm
-{     name      }-{ type}-{ver}-{iteration}.{ commit }.{arch}.rpm
+wp-launch-check-0.x-release-0.6.0-01458238016.git4602714.x86_64.rpm
+{      name       }-{ type}-{ver}-{iteration}.{ commit }.{arch}.rpm
 ```
 The iteration number is the Circle build number for officiel builds, and a timestamp (seconds since the epoch) for locally-produced builds. The build script will refuse to make an RPM when there are uncommitted changes to the working tree, since the commit hash is included in the RPM name.
 
@@ -19,7 +19,7 @@ The iteration number is the Circle build number for officiel builds, and a times
 
 This rpm installs:
 
-/opt/pantheon/wp-launch-check-0/wp_launch_check.phar
+/opt/pantheon/wp-launch-check-0.x/wp_launch_check.phar
 
 ## Releasing to Package Cloud
 
@@ -37,5 +37,3 @@ To release a new version of WP Launch Check, simply update the VERSION.txt file 
 ## Provisioning WP Launch Check on Pantheon
 
 Pantheon will automatically install any new RPM that is deployed to Package Cloud. This is controlled by [pantheon-cookbooks/wp-cli](https://github.com/pantheon-cookbooks/wp-cli/blob/master/recipes/default.rb).
-
-
