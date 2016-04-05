@@ -1,6 +1,6 @@
-# RPM for wp-cli
+# RPM for wp-launch-check
 
-This repository builds an RPM for wp-cli.
+This repository builds an RPM for wp-launch-check.
 
 ## Relevant wp-cli RPM names
 
