@@ -15,5 +15,5 @@ if [ -z "$1" ] ; then
 fi
 
 for i in ${repo_versions[@]} ; do
-  package_cloud push "pantheon/$1/fedora/$i" pkg/$i/wp-cli/*.rpm
+  package_cloud push "pantheon/$1/fedora/$i" pkg/$i/wp-launch-check/*.rpm
 done
