@@ -72,3 +72,7 @@ fpm -s dir -t rpm  \
     --prefix "$install_prefix" \
     -C build \
     wp-launch-check.phar
+
+# Finish up by running our tests.
+$bin/../tests/confirm-rpm.sh
+
