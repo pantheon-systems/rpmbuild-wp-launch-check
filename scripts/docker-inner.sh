@@ -52,7 +52,8 @@ fi
 
 rm -rf $download_dir
 mkdir -p $download_dir
-curl -L https://github.com/pantheon-systems/wp_launch_check/releases/download/v{version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
+curl -L -f https://github.com/pantheon-systems/wp_launch_check/releases/download/v${version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
+[ $? == 0 ] || (echo "Download failed!"; exit 1)
 
 mkdir -p "$target_dir"
 
