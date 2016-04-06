@@ -54,9 +54,6 @@ rm -rf $download_dir
 mkdir -p $download_dir
 curl -L https://github.com/pantheon-systems/wp_launch_check/releases/download/v{version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
 
-if [ -d "$rpm_dir" ]  ; then
-  rm -rf "$rpm_dir"
-fi
 mkdir -p "$target_dir"
 
 fpm -s dir -t rpm  \
