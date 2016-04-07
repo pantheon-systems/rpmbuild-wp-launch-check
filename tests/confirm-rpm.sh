@@ -1,9 +1,11 @@
 #!/bin/bash
 # confirm-rpm.sh
 
+fedora_release=$1
+
 expectedName=wp-launch-check-0.x
 expectedContents=/opt/pantheon/wp-launch-check-0.x/wp-launch-check.phar
-pkgDir="pkg/22/wp-launch-check"
+pkgDir="pkg/$fedora_release/wp-launch-check"
 if [ ! -d "$pkgDir" ]
 then
   echo 'Package directory not found.'

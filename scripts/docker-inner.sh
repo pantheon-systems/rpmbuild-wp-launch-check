@@ -50,6 +50,7 @@ else
     fi
 fi
 
+# We wastefully re-download the same file for each version of Fedora. Oh well.
 rm -rf $download_dir
 mkdir -p $download_dir
 curl -L -f https://github.com/pantheon-systems/wp_launch_check/releases/download/v${version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
@@ -72,5 +73,4 @@ fpm -s dir -t rpm  \
     wp-launch-check.phar
 
 # Finish up by running our tests.
-$bin/../tests/confirm-rpm.sh
-
+$bin/../tests/confirm-rpm.sh $fedora_release
