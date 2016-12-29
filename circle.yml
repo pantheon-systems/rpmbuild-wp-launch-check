@@ -1,18 +1,12 @@
-general:
-  artifacts:
-    - "pkg"
-
-machine:
-  services:
-    - docker
-
+---
 dependencies:
   pre:
-    - make docker-deps
+    - make deps
+    - make deps-circle
 
 test:
   override:
-    - make all
+    - make all test
 
 deployment:
   dev:
