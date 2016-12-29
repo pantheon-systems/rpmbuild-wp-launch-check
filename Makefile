@@ -5,7 +5,7 @@ VERSION := $(shell cat VERSION.txt)
 all: rpm
 
 .PHONY: test
-test: rpm_deps
+test:
 	tests/confirm-rpm.sh
 
 .PHONY: deps
@@ -13,9 +13,6 @@ deps: fpm_deps
 
 .PHONY: with-native-tools
 with-native-tools: rpm-with-native-tools
-
-.PHONY: docker-deps
-docker-deps:
 
 .PHONY: rate_limit
 rate_limit:
@@ -36,8 +33,4 @@ fpm_deps: rpm_deps
 
 .PHONY: rpm
 rpm:
-	sh scripts/docker-outer.sh
-
-.PHONY: rpm-with-native-tools
-rpm-with-native-tools: fpm_deps
-	sh scripts/dockerless.sh
+	sh scripts/build-rpm.sh

@@ -16,10 +16,7 @@ test:
 
 deployment:
   dev:
-    branch:
-      - stage
-      - yolo
-      - dev
+    branch: /^(?!master$).*$/  # not the master branch
     commands:
       - gem install package_cloud
       - bash scripts/push_packagecloud.sh internal-staging
