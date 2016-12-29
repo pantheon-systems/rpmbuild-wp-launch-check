@@ -1,11 +1,10 @@
 #!/bin/bash
 # confirm-rpm.sh
 
-fedora_release=$1
 
 expectedName=wp-launch-check-0.x
 expectedContents=/opt/pantheon/wp-launch-check-0.x/wp-launch-check.phar
-pkgDir="pkg/$fedora_release/wp-launch-check"
+pkgDir="pkgs"
 if [ ! -d "$pkgDir" ]
 then
   echo 'Package directory not found.'
@@ -38,9 +37,17 @@ then
   exit 1
 fi
 
-if [ "$name" == "$expectedName" ]
+architecture=$(rpm -qp "$pkgDir/$rpmName" --qf "%{arch}")
+if [ "$architecture" != "noarch" ]
 then
-  echo "Name does not have channel (dev, prod, etc.) appended."
+  echo "Architecture $architecture is not 'noarch'"
+  exit 1
+fi
+
+os=$(rpm -qp "$pkgDir/$rpmName" --qf "%{os}")
+if [ "$os" != "linux" ]
+then
+  echo "Architecture $os is not 'linux'"
   exit 1
 fi
 
@@ -52,7 +59,7 @@ then
 fi
 
 release=$(rpm -qp --queryformat '%{RELEASE}\n' "$pkgDir/$rpmName")
-if [ -z "$(echo "$release" | grep '^\([0-9]\{10\}\.[0-9a-f]\{7\}\|[0-9]\{10\}\)$')" ]
+if [ -z "$(echo "$release" | grep '^\([0-9]\{12\}\)$')" ]
 then
   echo "Release $release does not match our expected format"
   exit 1

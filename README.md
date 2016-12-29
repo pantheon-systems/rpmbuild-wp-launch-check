@@ -28,7 +28,7 @@ Any time a commit is merged on a tracked branch, then a WP Launch Check RPM is b
 Branch       | Target
 ------------ | ---------------
 master       | pantheon/internal/fedora/#
-stage        | pantheon/internal-staging/fedora/#
+Any PR       | pantheon/internal-staging/fedora/#
 
 In the table above, # is the fedora build number (19, 20, 22). Note that WP Launch Check is only installed on app servers, and there are no app servers on anything prior to f22; therefore, at the moment, we are only building for f22.
 
