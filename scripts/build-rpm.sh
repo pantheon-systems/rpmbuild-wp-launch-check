@@ -27,7 +27,7 @@ target_dir="$bin/../pkgs"
 
 rm -rf $download_dir
 mkdir -p $download_dir
-curl -L -f https://github.com/pantheon-systems/wp_launch_check/releases/download/v${version}/wp_launch_check-${version}.phar --output $download_dir/wp-launch-check.phar
+curl -L -f https://github.com/pantheon-systems/wp_launch_check/releases/download/v${version}/wp_launch_check.phar --output $download_dir/wp-launch-check.phar
 
 mkdir -p "$target_dir"
 
