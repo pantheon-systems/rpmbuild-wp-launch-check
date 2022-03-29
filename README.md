@@ -1,5 +1,7 @@
 # RPM for wp-launch-check
 
+[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#deprecated)
+
 This repository builds an RPM for wp-launch-check.
 
 ## Relevant wp-cli RPM names
